@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1em;
+}
+
+header nav ul li {
+    margin: 0;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+header p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+main {
+    padding: 2em 1em;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#hero {
+    text-align: center;
+    background: #f4f4f4;
+    padding: 2em 0;
+}
+
+#hero h2 {
+    margin: 0 0 1em;
+    font-size: 2.5em;
+}
+
+#hero p {
+    margin: 0 0 1em;
+    font-size: 1.2em;
+}
+
+#hero .btn {
+    background: #007BFF;
+    color: white;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#home, .about, .services, .inquiry, .location-verification, .collection-mechanism, .feedback, .contact {
+    margin: 2em 0;
+}
+
+.services .service, .collection-mechanism .mechanism {
+    margin: 1em 0;
+}
+
+.services .service h3, .collection-mechanism .mechanism h3, .about h2, .inquiry h2, .location-verification h2, .feedback h2, .contact h2 {
+    margin-bottom: 0.5em;
+}
+
+.inquiry .btn, .location-verification .btn, .feedback .btn, .contact .btn {
+    background: #28A745;
+    color: white;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+footer p {
+    margin: 0.5em 
