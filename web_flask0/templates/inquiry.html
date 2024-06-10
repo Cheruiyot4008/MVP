@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inquiry Page - Naiwaste Solution</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Inquiry Page</h1>
+    <p>Select a service to inquire about:</p>
+    <div class="tab">
+        <button onclick="location.href='{{ url_for('garbage_collection') }}'">Garbage Collection</button>
+        <button onclick="location.href='{{ url_for('tunnel_drainage') }}'">Tunnel Drainage</button>
+        <button onclick="location.href='{{ url_for('water_paths_opening') }}'">Water Paths Opening</button>
+    </div>
+    <button onclick="location.href='{{ url_for('index') }}'">Next</button>
+</body>
+</html>

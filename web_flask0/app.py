@@ -69,5 +69,52 @@ def pay():
     response = lipa_na_mpesa_online(phone_number, amount)
     return render_template('payment_status.html', response=response)
 
+def create_account():
+    if request.method == 'POST':
+        # Handle form submission for account creation
+        return redirect(url_for('index'))
+    return render_template('create_account.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        # Handle form submission for login
+        return redirect(url_for('index'))
+    return render_template('login.html')
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/create_account', methods=['GET', 'POST'])
+def create_account():
+    if request.method == 'POST':
+        # Handle form submission for account creation
+        return redirect(url_for('index'))
+    return render_template('create_account.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        # Handle form submission for login
+        return redirect(url_for('index'))
+    return render_template('login.html')
+
+@app.route('/inquiry')
+def inquiry():
+    return render_template('inquiry.html')
+
+@app.route('/garbage_collection')
+def garbage_collection():
+    return "Garbage Collection Inquiry Page"
+
+@app.route('/tunnel_drainage')
+def tunnel_drainage():
+    return "Tunnel Drainage Inquiry Page"
+
+@app.route('/water_paths_opening')
+def water_paths_opening():
+    return "Water Paths Opening Inquiry Page"
+
 if __name__ == '__main__':
     app.run(debug=True)
