@@ -4,6 +4,7 @@ With the project the user creates an account , then logs in and checks on the se
 The link to our deplyoded project is :https://github.com/Cheruiyot4008/MVP/commit/a252b50e01690ecb58a55a6ce7ee4fa383753e74
 The Link to the Linkeldn blog post :https://www.linkedin.com/posts/brian-cheruiyot-17763a214_naiwaste-solution-is-a-project-that-came-activity-7206352352268713985-gN_r?utm_source=share&utm_medium=member_desktop
 Lik to my Linkeldn page :https://www.linkedin.com/in/brian-cheruiyot-17763a214/
+     
      INSTALLATION 
 1. Cloning the Repository
 First, clone the repository from your version control system (e.g., GitHub).
@@ -58,3 +59,34 @@ If you have different environments (e.g., development, production), you might ha
 npm run dev  # For development
 npm run start  # For production
 
+
+Usage
+Once the application is up and running, you can start using Naiwaste solution by following these steps:
+1.Register an Account:
+Navigate to the registration page and create a new account.
+2.Log In:
+Use your credentials to log in.
+3.Dashboard:
+Access your dashboard/ Landing page to check on the services offered.
+
+4 Inquiry
+The user then Inquires on the kind of services offered to them by the system
+
+5 Services Offered page
+The services to different customers depend heavily on the various sub-states that they come from
+
+6 Location verification
+After choosing on the service they want to be given to them theie location is verified to authenticate the kind of service to offere them
+
+7 Colletion Mechanism
+The user chooses whethey they want garbage from theie sites to be collected by Large trucks, Mini trucks or by Tractors
+
+9 Collection
+Garbagge is now collected from the user location
+
+10 Feedback
+After the service has been provided to the customer, the user is given a chance to rate the services offered to them by means of writing a message in a dialog box assigned to them.
+
+
+Contributions
+We are open to any kind of corrections, keeping in mind that we learn through making mistakes then we are soo much open and ready to correct on our mistakes if any, we also wellcome any suggestion to further enhance the functionality and effectiveness of our project.
