@@ -1,0 +1,127 @@
+ /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: white; /* White background while retaining image */
+}
+
+/* Navigation Styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222; /* Black color for the navigation bar */
+    padding: 10px 15px; /* Padding to adjust the size */
+    width: 100%; /* Full width to match the body */
+    box-sizing: border-box; /* Ensure padding does not affect width */
+}
+
+/* Adjusted to stack logo and Token Flow vertically */
+nav .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav .logo-img {
+    width: 80px; /* Increased size of the logo */
+    height: auto;
+    margin-bottom: 2px; /* Reduced space between logo and Token Flow text */
+}
+
+nav .logo {
+    font-size: 16px; /* Reduced size of "Token Flow" to match previous examples */
+    font-weight: bold;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Adjusted gap between navigation items */
+    margin-left: auto; /* Push navigation items to the right */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px; /* Adjusted padding for navigation links */
+    font-size: 16px; /* Adjusted font size for nav links */
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #333;
+}
+
+.login-btn {
+    background-color: #007bff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Section Styling */
+section {
+    flex: 1;
+    padding: 60px; /* Increased padding for a larger section */
+    background-color: rgba(255, 255, 255, 0.8); /* Keep white background with transparency */
+    color: #fff; /* Set text color to white */
+    background-image: url('../Pictures/privacy.png'); /* Retain image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align content at the top */
+}
+
+/* Centered "Privacy" Text */
+section h1 {
+    font-size: 44px; /* Increased size of "Privacy" */
+    margin-bottom: 30px; /* More space below "Privacy" heading */
+    text-align: center;
+}
+
+/* Ensure the remaining content stays as it was */
+section p {
+    font-size: 20px; /* Increased size of paragraph text */
+    line-height: 1.8; /* Larger line height for better readability */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #222;
+    text-align: center;
+    padding: 25px; /* Larger padding for footer */
+    color: #fff;
+    margin-top: auto;
+}
+
+.sign-out-button {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 18px; /* Increased size of sign-out button */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.sign-out-button:hover {
+    background-color: #cc0000;
+}

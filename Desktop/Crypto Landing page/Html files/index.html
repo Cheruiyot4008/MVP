@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Landing Page</title>
+    <link rel="stylesheet" href="../Css files/index.css"> <!-- Correct relative path -->
+    <script defer src="crypto.js"></script> <!-- JavaScript file for dynamic data fetching -->
+    <!-- Add Axios for API requests -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <nav>
+            <!-- Logo and Token Flow container for vertical alignment -->
+            <div class="logo-container">
+                <img src="../Pictures/logo.png" alt="Logo" class="logo-img">
+                <div class="logo">Token Flow</div>
+            </div>
+            <ul>
+                <li><a href="about us.html">About us</a></li>
+                <li><a href="contact us.html">Contact us</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="#" class="login-btn">Login</a></li>
+            </ul>
+        </nav>
+
+        <marquee direction="left">Welcome to Token Flow, your most recent and updated cryptocurrency platform</marquee>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="crypto-search" placeholder="Search for a cryptocurrency...">
+            <button id="search-btn">Search</button>
+        </div>
+
+        <!-- Table to display cryptocurrency data -->
+        <table id="crypto-table">
+            <thead>
+                <tr>
+                    <th>Icon</th>
+                    <th>Currency</th>
+                    <th>Price (USD)</th>
+                    <th>24h Change (%)</th>
+                    <th>Market Cap (USD)</th>
+                </tr>
+            </thead>
+            <tbody id="crypto-data">
+                <!-- Dynamic rows will be inserted here -->
+            </tbody>
+        </table>
+
+        <!-- Content area to push the footer down -->
+        <div class="content">
+            <!-- Add your page content here -->
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <button class="sign-out-button" onclick="goHome()">← Sign Out</button>
+    </footer>
+
+    <script>
+        function goHome() {
+            window.location.href = 'index.html'; // Adjust the path if needed
+        }
+
+        // Fetch and display cryptocurrencies from CoinGecko API
+        async function fetchCryptocurrencyData() {
+            try {
+                const response = await axios.get('https://api.coingecko.com/api/v3/coins/markets', {
+                    params: {
+                        vs_currency: 'usd',
+                        order: 'market_cap_desc',
+                        per_page: 10,  // Number of cryptocurrencies to display
+                        page: 1,
+                        sparkline: false
+                    }
+                });
+                const cryptoData = response.data;
+                const cryptoTable = document.getElementById('crypto-data');
+
+                // Clear existing table data
+                cryptoTable.innerHTML = '';
+
+                // Loop through the data and create table rows
+                cryptoData.forEach(crypto => {
+                    const row = document.createElement('tr');
+
+                    // Icon
+                    const iconCell = document.createElement('td');
+                    const icon = document.createElement('img');
+                    icon.src = crypto.image;
+                    icon.alt = crypto.name;
+                    icon.style.width = '30px';
+                    iconCell.appendChild(icon);
+                    row.appendChild(iconCell);
+
+                    // Cryptocurrency Name
+                    const nameCell = document.createElement('td');
+                    nameCell.textContent = crypto.name;
+                    row.appendChild(nameCell);
+
+                    // Price in USD
+                    const priceCell = document.createElement('td');
+                    priceCell.textContent = `$${crypto.current_price.toFixed(2)}`;
+                    row.appendChild(priceCell);
+
+                    // 24h Change Percentage
+                    const changeCell = document.createElement('td');
+                    changeCell.textContent = `${crypto.price_change_percentage_24h.toFixed(2)}%`;
+                    changeCell.className = crypto.price_change_percentage_24h >= 0 ? 'positive' : 'negative';
+                    row.appendChild(changeCell);
+
+                    // Market Cap
+                    const marketCapCell = document.createElement('td');
+                    marketCapCell.textContent = `$${crypto.market_cap.toLocaleString()}`;
+                    row.appendChild(marketCapCell);
+
+                    // Append row to the table
+                    cryptoTable.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Error fetching cryptocurrency data:', error);
+            }
+        }
+
+        // Search functionality
+        document.getElementById('search-btn').addEventListener('click', function() {
+            const query = document.getElementById('crypto-search').value.toLowerCase();
+            const rows = document.querySelectorAll('#crypto-table tbody tr');
+
+            rows.forEach(row => {
+                const name = row.cells[1].textContent.toLowerCase();
+                if (name.includes(query)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+
+        // Fetch cryptocurrency data on page load
+        window.onload = fetchCryptocurrencyData;
+    </script>
+</body>
+</html>

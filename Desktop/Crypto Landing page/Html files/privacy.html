@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy - WorldCrypto</title>
+    <!-- Corrected CSS path assuming it is served from the 'Css files' directory -->
+    <link rel="stylesheet" href="../Css files/privacy.css"> <!-- Adjusted relative path for CSS -->
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo-container"> <!-- Wrapped the logo and text in a container -->
+            <!-- Add logo -->
+            <img src="../Pictures/logo.png" alt="Logo" class="logo-img">
+
+            <div class="logo">Token Flow</div>
+        </div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about us.html">About Us</a></li>
+            <li><a href="contact us.html">Contact Us</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="index.html" class="login-btn">Login</a></li>
+        </ul>
+    </nav>
+
+    <section id="privacy">
+        <div class="content">
+            <h1>Privacy</h1>
+            <p>We value your privacy and are committed to protecting your personal information.</p><br>
+            
+            <p>When you create an account on our platform, we collect essential information like your name and email, then store it in our database. This helps us provide you with a seamless experience and keep your account secure.</p><br>
+            
+            <p>Your data is safe with us. We use advanced security measures to protect it and only share it with trusted partners when necessary. You can update or delete your information anytime, and if you have any questions, we're here to help.</p><br>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <button class="sign-out-button" onclick="goHome()">← Sign Out</button>
+    </footer>
+
+    <script>
+        function goHome() {
+            window.location.href = 'index.html'; // Adjust the path if needed
+        }
+    </script>
+</body>
+</html>
